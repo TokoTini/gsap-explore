@@ -11,22 +11,15 @@ body, html {
   margin: 0;
 }
 
-div {
-  position:absolute;
-  height: 800px !important;
+.main {
+  overflow: hidden;
 }
-.scrollDist {
-  /* height: 500px !important; */
-}
-
-/* .place {
-  width: 100%;
-  height: 2000px;
-} */
-
 .test {
   width: 100%;
   height: 2000px !important;
-  background-color: red;
+  background-color: aquamarine;
   z-index: -5;
+}
+.head {
+  height: 80px;
 }

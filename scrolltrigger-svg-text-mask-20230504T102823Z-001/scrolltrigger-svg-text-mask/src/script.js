@@ -1,10 +1,10 @@
-gsap.set('.main', {position:'absolute', background:'#fff', width:'100%', maxWidth:'1200px', height:'100%', top:0, left:'50%', x:'-50%'})
+gsap.set('.main', {background:'#fff', width:'100%', maxWidth:'1920px', height:'1000px'})
 gsap.timeline({
     scrollTrigger:{
         trigger:'.main',
         start:'top top', 
-        end:'bottom 50%', 
-        scrub:1,
+        end:'bottom 40%', 
+        scrub: 1,
         markers: true
     }
     })
@@ -15,16 +15,9 @@ gsap.timeline({
     .fromTo('.mountBg', {y:-10},{y:-100}, 0)
     .fromTo('.mountMg', {y:-30},{y:-250}, 0)
     .fromTo('.mountFg', {y:-50},{y:-600}, 0)
-    .fromTo('#hola', {y:0},{y:0}, 0)
+    .fromTo('.texti', {y:0},{y: 250}, 0)
 
 
-
-    gsap.to('.main',{
-        scrollTrigger: {
-            trigger: '.main',
-            start: "top top",
-            end: "bottom 100%",
-            scrub: true,
-            toggleClass: { className: "active", targets: '#anchor' },
-        }
-    })
+    $('#arrowBtn').on('mouseenter', (e)=>{ gsap.to('.arrow', {y:10, duration:0.8, ease:'back.inOut(3)', overwrite:'auto'}); })
+    $('#arrowBtn').on('mouseleave', (e)=>{ gsap.to('.arrow', {y:0, duration:0.5, ease:'power3.out', overwrite:'auto'}); })
+    $('#arrowBtn').on('click', (e)=>{ gsap.to(window, {scrollTo: 500, duration:2, ease:'power1.out', overwrite:'auto'}); }) // scrollTo requires the ScrollTo plugin (not to be confused w/ ScrollTrigger)
